@@ -8,9 +8,10 @@
 </template>
 
 <script>
-import Header from './components/layout/Header'
-import Todos from './components/Todos'
-import AddTodo from './components/AddTodo'
+import Header from './components/layout/Header';
+import Todos from './components/Todos';
+import AddTodo from './components/AddTodo';
+import axios from 'axios';
 
 export default {
   name: 'app',
@@ -19,33 +20,22 @@ export default {
     Todos,
     AddTodo
   },
-  data () {
+  data() {
     return {
-      todos: [
-        {
-          id: 1,
-          title: "Too One",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "Too Two",
-          completed: true
-        },
-        {
-          id: 3,
-          title: "Too Three",
-          completed: false
-        }
-      ]
+      todos: []
     }
   },
   methods: {
-    deleteTodo (id) {
+    deleteTodo(id) {
       this.todos = this.todos.filter(todo => todo.id != id)
     },
     addTodo(newTodo) {
       this.todos = [... this.todos, newTodo];
+    },
+    created() {
+      axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+        .then(res => this.todos = res.data)
+        .catch(err => console.log(err));
     }
   }
 }
