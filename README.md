@@ -1,4 +1,10 @@
-# todolist
+# todolist - Todo project in Vue.js
+
+## Clone the project
+```
+git clone https://github.com/kirils/todolist.git
+cd todolist
+```
 
 ## Project setup
 ```
@@ -8,6 +14,13 @@ yarn install
 ### Compiles and hot-reloads for development
 ```
 yarn run serve
+```
+
+### Open project in browser
+```
+http://localhost:8080
+or
+http://127.0.0.1:8080
 ```
 
 ### Compiles and minifies for production
