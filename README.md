@@ -6,6 +6,11 @@ git clone https://github.com/kirils/todolist.git
 cd todolist
 ```
 
+## Install Yarn
+```
+https://yarnpkg.com/en/docs/install
+```
+
 ## Project setup
 ```
 yarn install
