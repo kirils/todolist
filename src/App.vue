@@ -3,7 +3,6 @@
     <Header />
     <AddTodo v-on:add-todo="addTodo" />
     <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo"/>
-  
   </div>
 </template>
 
@@ -31,12 +30,12 @@ export default {
     },
     addTodo(newTodo) {
       this.todos = [... this.todos, newTodo];
-    },
-    created() {
-      axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
-        .then(res => this.todos = res.data)
-        .catch(err => console.log(err));
     }
+  },
+  created() {
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+      .then(res => this.todos = res.data)
+      .catch(err => console.log(err));
   }
 }
 </script>
